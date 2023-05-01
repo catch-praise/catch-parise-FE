@@ -1,0 +1,49 @@
+{
+  "name": "catch-parise",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:eslint": "eslint 'src/*.{js,jsx,ts,tsx}'",
+    "lint:prettier": "prettier --check 'src/.{js,ts,jsx,tsx}'",
+    "lint:fix": "yarn lint:fix:eslint && yarn lint:fix:prettier",
+    "lint:fix:eslint": "eslint --fix 'src/**/.{js,ts,jsx,tsx}'",
+    "lint:fix:prettier": "prettier --write 'src/*/.{js,ts,jsx,tsx}'",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "autoprefixer": "10.4.14",
+    "eslint": "^8.39.0",
+    "eslint-config-next": "13.3.2",
+    "next": "13.3.2",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier"
+    ]
+  }
+}
